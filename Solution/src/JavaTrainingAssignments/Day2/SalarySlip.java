@@ -14,9 +14,6 @@
 
 package JavaTrainingAssignments.Day2;
 
-import java.text.DateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -65,8 +62,7 @@ public class SalarySlip {
 
         netSalary=totalSalary-calTax;
 
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        LocalDateTime date = LocalDateTime.now();
+        Date date = new Date();
 
 
         //Salary Slip formatting
@@ -74,7 +70,7 @@ public class SalarySlip {
         System.out.println("----------------------- Salary Slip -------------------------");
         System.out.println("-------------------------------------------------------------");
         System.out.println("| Employee Name : "+employeeFullName+" |");
-        System.out.println("| Date : "+dtf.format((date)));
+        System.out.println("| Date : "+date);
         System.out.println("-------------------------------------------------------------");
         System.out.println("-------------------------------------------------------------");
         System.out.println("| Earnings :                ||           Deductions (-)      |");

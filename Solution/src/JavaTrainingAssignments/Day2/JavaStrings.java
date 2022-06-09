@@ -11,6 +11,7 @@ public class JavaStrings {
             if(i==0){
                 res=res+Character.toUpperCase(ch);
             }
+
             else {
                 res = res + Character.toLowerCase(ch);
             }

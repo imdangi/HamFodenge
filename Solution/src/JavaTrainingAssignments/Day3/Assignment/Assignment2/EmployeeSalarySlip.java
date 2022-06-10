@@ -3,6 +3,7 @@ package JavaTrainingAssignments.Day3.Assignment.Assignment2;
 
 import JavaTrainingAssignments.Day3.Assignment.Assignment1.ToTitleCase;
 
+import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -142,14 +143,15 @@ public class EmployeeSalarySlip {
     public void printSalarySlip(){
         Locale locale=new Locale("en","in");
         NumberFormat nf=NumberFormat.getCurrencyInstance(locale);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yy");
-        String date=sdf.format(new Date());
+        Date date=new Date();
+        DateFormat df= DateFormat.getDateInstance(DateFormat.SHORT,locale);
+//        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yy");
 
         System.out.println("*************************************************************");
         System.out.println("----------------------- Salary Slip -------------------------");
         System.out.println("-------------------------------------------------------------");
         System.out.println("| Employee Name : "+ ToTitleCase.toTitleCase(getEmployeeName())+" |");
-        System.out.println("| Date : "+date);
+        System.out.println("| Date : "+df.format(date));
         System.out.println("-------------------------------------------------------------");
         System.out.println("-------------------------------------------------------------");
         System.out.println("| Earnings :                ||           Deductions (-)      |");

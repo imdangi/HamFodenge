@@ -1,28 +1,28 @@
 package JavaTrainingAssignments.Day4.Assignment4;
 
-public class Employee extends Person{
+abstract class Employee extends Person{
     private String companyName;
     private double salary;
     private String role;
-    private String experience;
-    private double bonus;
-    private boolean isFullTime;
+    private boolean fullTime;
+    private int remainingHolidays;
 
 
-    public Employee(String fullName,byte age,String phoneNumber,char gender,String email){
-        super(fullName,age,phoneNumber,gender,email);
-        companyName="TCS Ltd";
+    public Employee(String fullName, String phoneNumber, String companyName, double salary, String role){
+        super(fullName,phoneNumber);
+        this.salary=salary;
+        this.role=role;
+        this.companyName=companyName;
     }
 
+    abstract void calculateBonus();
+    abstract void attendance();
     @Override
-    public void printDetails(){
+    void printDetails(){
         super.printDetails();
         System.out.println("Company Name : "+this.companyName);
         System.out.println("Salary : "+this.salary);
         System.out.println("Role : "+this.role);
-        System.out.println("Experience : "+this.experience);
-        System.out.println("Bonus : "+this.bonus);
-
     }
 
     public String getCompanyName() {
@@ -49,27 +49,19 @@ public class Employee extends Person{
         this.role = role;
     }
 
-    public String getExperience() {
-        return experience;
-    }
-
-    public void setExperience(String experience) {
-        this.experience = experience;
-    }
-
-    public double getBonus() {
-        return bonus;
-    }
-
-    public void setBonus(double bonus) {
-        this.bonus = bonus;
+    public void setFullTime(boolean fullTime) {
+        this.fullTime = fullTime;
     }
 
     public boolean isFullTime() {
-        return isFullTime;
+        return fullTime;
     }
 
-    public void setFullTime(boolean fullTime) {
-        isFullTime = fullTime;
+    public int getRemainingHolidays() {
+        return remainingHolidays;
+    }
+
+    public void setRemainingHolidays(int remainingHolidays) {
+        this.remainingHolidays = remainingHolidays;
     }
 }
